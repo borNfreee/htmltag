@@ -1,0 +1,28 @@
+language: php
+
+git:
+  depth: 1
+
+cache:
+  directories:
+    - $HOME/.cache/composer
+    - $HOME/.composer/cache
+
+php:
+- 7.1
+- 7.2
+
+install:
+- composer install
+
+script:
+- composer grumphp
+
+after_success:
+- composer infection
+- composer scrutinizer
+- composer bench
+
+env:
+  global:
+    secure: PgbKOQvF6wDx74EOBkH8aJ2ctkZPXZU/g0lHoPqXuW5rAZDcGYuy1Hb6oRKTGh1DiZ3onUxSQ44Y6H6C0o0hGLUepta/BhyTbTw8f4bYfyMTO/1rvmn0hZ8/y2dQz3XmfeXRBz2vyjfKZkEiSOSd73+d0csEPUTSScKQmSPEZ9H9oooRZtegwlrKdWPkZ/Gy+mxhX1nxLYvdWHAE0KFo0FWWy8OrUv0A0ndtbEeI99e+QNHF0NbmFxgi1VdJ3kznbfjIDJTqlhbyaN2gS+d3TJf3WzZQdLcURN4K7FIUAvNicwD0SmMxf5eUYujGP901B/NNIocaLVjzFLfUXIlhJYjQMd36Nc+uvQjdEUxtTzxWoZi3gLSL6WTPI6zoAzl/XWhIK421DwaV4tlPTpIyfQyozCdkZWJp05WiUh7dbBlDgZC8TzKoO/lIftRK5AGPtjyOegPtqa1SUlRNg7FhJQhMzkum7w40+AjQh/LEC/GtGQ0zq2UtDC+dCOjKmw28aia4m951eWEXIHJyjbvaUlIiEqc5AMr2P9gklcM0F86DV5IGTYSurqPfIsInMdn76PW55Cxj0LtDeLsvlGb5WQpmnheIAK2tGBA9qEC06QnCSe/cgxV86TsdLenwaerEdoL5Zzgc+KhXN8Bx/nCt9XUzQld/HnkYG1mJuH7kLhU=
