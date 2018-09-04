@@ -1,0 +1,16 @@
+vendor
+grumphp.yml
+composer.lock
+node_modules
+.idea/
+/build/
+/phpunit.xml
+/runner.yml
+test.php
+/.php_cs.cache
+/infection.log
+/infection-log.txt
+/per-mutator.md
+/summary.log
+/test_builder.php
+/debug.log
